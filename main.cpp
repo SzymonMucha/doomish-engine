@@ -6,6 +6,7 @@ using namespace std;
 
 class Screen {
 public:
+	vector<vector<char>> currentFrame;
 	Screen(int width, int height){
 		this->screenHeight = height;
 		this->screenWidth = width;
@@ -18,7 +19,6 @@ public:
 		}
 	}
 private:
-	vector<vector<char>> currentFrame;
 	int screenWidth;
 	int screenHeight;
 };

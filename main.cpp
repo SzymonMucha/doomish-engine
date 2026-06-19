@@ -1,14 +1,27 @@
 #include <iostream>
+#include <vector>
 #include <cmath>
 
 using namespace std;
 
-/*
-
-General note to my future (tommorow) self - greater the distance, more hight the wall gets (one cell on a map is one "piece of wall")
-and less of transparency the textures get (some squares from ascii table, scaling from empty black to full white). 
-
-*/
+class Screen {
+public:
+	Screen(int width, int height){
+		this->screenHeight = height;
+		this->screenWidth = width;
+	}
+	void refreshScreen(){
+		for(int i = 0; i < this->screenHeight; i++){
+			for(int j = 0; j < this->screenWidth; j++){
+				cout << this->currentFrame[i][j];
+			}
+		}
+	}
+private:
+	vector<vector<char>> currentFrame;
+	int screenWidth;
+	int screenHeight;
+};
 
 class Camera {
 public:
